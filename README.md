@@ -10,18 +10,22 @@ Open `project.godot` in Godot 4.3 and run the project. The entry scene is `scene
 
 | Input | Action |
 | --- | --- |
-| `W` / `A` / `S` / `D` | Move |
-| Mouse | Orbit the spring-arm third-person camera |
-| `E` | Interact with the nearby highlighted-purpose object |
+| `W` / `A` / `S` / `D` | Camera-relative movement |
+| `Shift` | Sprint |
+| `Space` | Jump |
+| Mouse | Orbit the offset spring-arm third-person camera |
+| `E` | Interact with the nearby current-objective device |
 | `R` | Restart the prototype |
-| `Esc` | Release mouse capture |
+| `Esc` | Pause or resume the mission |
 
 ## Systems in this milestone
 
-- **Expanded procedural city:** A 96×96 district has a street grid, eight building blocks, market stalls, lamps, a transit landmark, and five ambient civilian placeholders.
-- **Improved movement and camera:** Camera-relative movement accelerates smoothly, the player mesh turns toward motion, gravity and building collisions keep movement grounded, and a spring arm keeps the third-person camera from clipping through buildings.
-- **Interaction and objectives:** Follow a four-step route: open the transit gate, activate the East and Market relays, then signal the extraction beacon. An on-screen `E` prompt only exposes the current mission action.
-- **Patrol and detection:** Three procedural guard placeholders walk looping routes across separate city sectors. Their forward cones detect the player at close range and issue a throttled alert.
+- **Larger procedural city:** A 140×140 district contains a five-by-five street grid, sixteen varied blocks (towers, courtyards, warehouses, and slab complexes), street lighting, a market, transit signage, and a skyline uplink.
+- **Playable pedestrian space:** Eight civilians walk distinct sidewalk loops, turn toward their travel direction, and briefly pause at corners. Four guards patrol separate sectors.
+- **Improved movement and camera:** Camera-relative movement has responsive acceleration/deceleration, coyote-time jumping, sprint FOV feedback, smooth visual turning, and an offset spring arm that avoids building clipping.
+- **More responsive city life:** Guards investigate the player’s last seen position after a detection, while civilians step away when the player crowds them before returning to their routes.
+- **Expanded mission route:** Complete six sequential objectives: gate, access chip, two relays, survey-data uplink, and extraction beacon. The HUD exposes only the valid interaction, displays its distance, and highlights the usable device.
+- **Pause menu:** `Esc` freezes the simulation and opens a focused pause overlay; resume with `Esc` or restart the district with `R`.
 
 ## Project layout
 
